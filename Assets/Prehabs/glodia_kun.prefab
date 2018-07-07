@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212414604819094744}
   - component: {fileID: 50015864393390170}
   - component: {fileID: 60644552710620570}
-  - component: {fileID: 114431488676755132}
+  - component: {fileID: 114065390214459470}
   m_Layer: 0
   m_Name: glodia_kun
   m_TagString: Untagged
@@ -129,7 +129,7 @@ PolygonCollider2D:
       - {x: 0.16902989, y: 0.4494318}
       - {x: 0.36200488, y: 0.49252152}
       - {x: 0.3950709, y: 0.7423449}
---- !u!114 &114431488676755132
+--- !u!114 &114065390214459470
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e00e8a4f2e1a4343a5969b88f29ce1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  script: {fileID: 0}
 --- !u!212 &212414604819094744
 SpriteRenderer:
   m_ObjectHideFlags: 1

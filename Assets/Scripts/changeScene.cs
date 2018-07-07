@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class changeScene : MonoBehaviour {
+public class ChangeScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,8 @@ public class changeScene : MonoBehaviour {
 		
 	}
 
-	public void SceneLoad () {
-		Application.LoadLevel("Start");
+	public void toGame () {
+		Application.LoadLevel("Game");
 	}
 
 }

@@ -26,11 +26,7 @@ public class GameManager : MonoBehaviour {
 	public Text resultCountOk;
 	public Text resultCountNg;
 
-	int i = 0;
-
-	public bool getFlg(){
-		return flg;
-	}
+	public int deadCount = 0;
 
 
 	// Use this for initialization
@@ -51,7 +47,7 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 
-
+		//Glodiaくんの数を取得
 		glodia_kuns = GameObject.FindGameObjectsWithTag("GlodiaKun");
         int sco = glodia_kuns.Length;
 		score.text = sco.ToString();
@@ -61,16 +57,9 @@ public class GameManager : MonoBehaviour {
 			Debug.Log("Click");
 			clickPosition = Input.mousePosition;
 			clickPosition.z = 10f;
-
 			float rotate = pointer.transform.localEulerAngles.z;
-
-			// 位置
-
-			// 角度
-			Vector3 axis = new Vector3(0f, 0f, 1f); // 回転軸 Z軸だよ
+			Vector3 axis = new Vector3(0f, 0f, 1f);
 			Quaternion rote = Quaternion.AngleAxis(rotate, axis);
-
-            //Instantiate( 生成するオブジェクト,  場所, 回転 );
             GameObject obj = Instantiate (glodia_kun, Camera.main.ScreenToWorldPoint(clickPosition), rote);
 			obj.tag = "GlodiaKun";
         }
@@ -99,13 +88,8 @@ public class GameManager : MonoBehaviour {
 
 		message.text = "";
 		message.gameObject.SetActive(false);
-
 		flg = true;
-
-		
 		StartCoroutine(CountdownGame());
-
-		// _imageMask.gameObject.SetActive(false);
 	}
 
 
@@ -141,9 +125,9 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-
 	void finish (){
 		resultBoard.gameObject.SetActive(true);
 		resultCountOk.text = score.text;
+		resultCountNg.text = deadCount.ToString();
 	}
 }
